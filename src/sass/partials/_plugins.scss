@@ -1,0 +1,72 @@
+/* Basic Upload */
+.file_upload {
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+
+        + label {
+            color: $color_white;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background-color: $brand_black;
+            display: inline-block;
+            @include transition(background-color, .3s, ease-in-out);
+        }
+
+        &:focus {
+            outline: 1px dotted $brand_accent;
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+
+        &:focus + label, + label:hover {
+            background-color: $brand_black_hover;
+        }
+    }
+    /* style 6 */
+
+    .file_control + label {
+        background-color: $color_white;
+        border-radius: 4px 15px 15px 4px;
+        color: $color_text;
+        padding: 0;
+        margin-bottom: 0;
+        width: 100%;
+        border:1px solid transparent;
+    }
+
+    .file_control:focus + label,
+    .file_control + label:hover {
+        border-color:$brand_primary;
+        background-color: $color_white;
+    }
+
+    .file_control + label span {
+        display: inline-block;
+        @include text_truncate;
+        width: 200px;
+        padding: 3px 10px;
+        vertical-align: middle;
+    }
+
+    /* Button Look */
+    .file_control + label strong {
+        // height: 100%;
+        color: $color_white;
+        background-color: $brand_primary;
+        display: inline-block;
+        font-weight: normal;
+        border-radius: 15px;
+        padding: 5px 15px;
+        float: right;
+    }
+
+    .file_control:focus + label strong,
+    .file_control + label:hover strong {
+        background-color: $brand_primary_hover;
+    }
+}

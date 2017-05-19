@@ -1,0 +1,359 @@
+.sd-main-content {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 2;
+
+    &::before {
+		/* never visible - used to check MQ in jQuery */
+		display: none;
+		content: 'mobile';
+	}
+
+    @include MQ(M) {
+        &::before {
+            /* never visible - used to check MQ in jQuery */
+            content: 'tablet';
+        }
+    }
+
+    @include MQ(L) {
+        &::before {
+            /* never visible - used to check MQ in jQuery */
+            content: 'desktop';
+        }
+    }
+}
+
+.section-block {
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    background-size: cover;
+
+    &.no_bottom_pad {
+        padding-bottom: 0;
+    }
+}
+
+.grey_tint {
+    background-color: $border_grey_light;
+}
+
+.section_title {
+    font-size: 23px;
+    font-family: $body_font;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    @include text_truncate;
+}
+
+footer[role="content-info"] {
+    background-color: $brand_accent;
+    color: $color_grey_light;
+
+    a {
+        color: inherit;
+
+        &:hover {
+            color: $brand_accent;
+        }
+    }
+
+    .right_half, .left_half {
+        .content_wrapper {
+            padding: 10px 0;
+
+            @include MQ(M) {
+                padding: 40px 0;
+            }
+        }
+    }
+
+    .left_half {
+    }
+
+    .right_half {
+        border-top: 1px solid $brand_black;
+        @include clearfix;
+    }
+
+    .link_title {
+        font-size: 14px;
+        padding-bottom: 15px;
+        color: $brand_primary;
+    }
+    
+    a {
+       
+        &:hover, &:focus {
+            color: $brand_primary;
+        }
+    }
+
+    .footer_links {
+        li {
+            display: inline-block;
+            line-height: 2;
+
+            + li::before {
+                content: '\f111';
+                font-family: "FontAwesome";
+                color: $border_grey_dark;
+                padding: 0 4px;
+                font-size: .5em;
+                vertical-align: middle;
+            }
+        }
+
+        @include MQ(M) {
+            li {
+                display: block;
+
+                + li::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.social_icon {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: $color_white;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: $brand_primary;
+    margin: 5px;
+    
+    &.icon_fb {
+        background-color: $color_fb;
+    }
+
+    &.icon_tw {
+        background-color: $color_tw;
+    }
+
+    &.icon_ln {
+        background-color: $color_lkin;
+    }
+}
+
+.user_avi {
+    display: inline-block;
+    @include border-radius(4px);
+    overflow: hidden;
+    text-align: center;
+
+    &.avi_circle {
+        @include border-radius(50%);
+    }
+
+    &.avi_xs img{
+      width: 20px;
+      height: 20px;
+    }
+
+    &.avi_sm img{
+        width: 32px;
+        height: 32px;
+    }
+
+    &.avi_md img{
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.tabbed_section {
+    @include flexbox();
+    flex-direction: column;
+
+    @include MQ(M) {
+        flex-direction: row;
+    }
+}
+
+.content_view {
+    background-image: url(../img/banners/guaz.png);
+    background-repeat: repeat;
+    background-size: 300px;
+
+    @include MQ(M) {
+        width: 70%;
+    }
+}
+
+.view_content {
+    padding: 30px 15px;
+
+    &.view_deliver {
+        background-image: url(../img/banners/item_3.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        min-height: 350px;
+        background-size: cover;
+    }
+
+    @include MQ(M) {
+        padding: 40px 0 20px 105px; 
+        height: 100%;
+    }
+}
+
+.content_control {
+
+    @include MQ(M) {
+        width: 30%;
+    }
+}
+
+.pl_figure {
+    display: block; 
+    width: 50%;
+    float: left;
+    text-align: center;
+
+    .pl_tag {
+        display: none;
+
+        @include MQ(M) {
+            display: inline-block;
+            border: 1px solid $border_grey;
+            padding: 5px;
+            background-color: $color_white;
+            color: $brand_primary;
+            max-width: 80%;
+            margin: auto;
+        }
+    }
+
+    img {
+        // max-width: 170px;
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+.tab_nav {
+    @include flexbox();
+
+    @include MQ(M) {
+        flex-direction: column;
+    }
+}
+
+.nav_item {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    text-align: center;
+
+    + .nav_item {
+        border-left: 1px solid $color_white;
+    }
+
+    @include MQ(M) {
+        text-align: left;
+
+
+        .nav_details, .nav_icon {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .nav_details {
+            width: 80%;
+        }
+
+        + .nav_item {
+            border-left: none;
+            border-top: 1px solid $color_white;
+        }
+    }
+
+    .wrapper {
+        background-color: $border_grey_dark;
+        color: $color_white;
+        padding: 10px 5px;
+
+        @include MQ(M) {
+            padding: 40px 120px 40px 30px;
+        }
+
+        &:hover {
+            background-color: $color_grey_dark;
+        }
+    }
+
+    &.active .wrapper {
+        background-color: $brand_primary;
+
+        &::before {
+            content:"";
+            position: absolute;
+            border-width: 20px;
+            border-style: solid;
+            border-color:transparent;
+            border-bottom-color: $brand_primary;
+            @include center(x);
+            top:-40px;
+        }
+
+        @include MQ(M) {
+            &::before {
+                left:-40px;
+                @include center(y);
+                border-bottom-color: transparent;
+                border-right-color: $brand_primary;
+            }
+        }
+    }
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+}
+
+.nav_icon {
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    background-color: $color_white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    color: $color_text;
+    font-size: 12px;
+}
+
+.nav_details {
+    padding-top: 10px;
+    font-size: 10px;
+
+    @include MQ(M) {
+        font-size: 14px;
+        padding-top: 0;
+        padding-left: 10px;
+    }
+}
+
+.featured_image {
+    display: block;
+    margin-bottom: 20px;
+
+    img {
+        width: 280px;
+        margin: auto;
+    }
+}

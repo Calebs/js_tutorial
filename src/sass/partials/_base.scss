@@ -1,0 +1,370 @@
+// antialiasing mode font rendering
+
+html * {
+  @include font-smoothing;
+}
+
+html {
+	font-size: 62.5%;
+    height: 100%;
+}
+
+*, *:after, *:before {
+  @include bx_s;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+body {
+    font-family: $body_font;
+    color: $color_text;
+    font-size: 1.2rem;
+    font-size: 12px;
+    word-spacing: .5px;
+    letter-spacing: .5px;
+    line-height: 1.2;
+    font-weight: 400;
+    position: relative;
+
+    padding-top: $header_height;
+
+    ul, ol{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $header_font;
+    font-weight: normal;
+    margin: 0;
+    color: inherit;
+}
+
+.base_line {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: $brand_primary;
+    margin-top: 3px;
+}
+
+h1 {
+	font-size: 2.2em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+h4 {
+	font-size: 1.6em;
+}
+
+h5 {
+	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
+}
+
+p {
+    margin: 0;
+
+    + p {
+        padding-top: .5em;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    em {
+        font-weight: bold;
+        font-style: italic;
+
+        sup {
+            color: $brand_inverse;
+        }
+    }
+}
+
+.input-group-addon {
+    background: $color_grey_dark;
+    color: $color_white;
+    font-family: $body_font;
+    font-size: .923em;
+    padding: 6px 15px;
+
+    .checkbox-inline {
+        padding-left: 0;
+        margin:0;
+    }
+
+    select {
+        background-color: inherit;
+        border:none;
+        font-size: 12px;
+    }
+}
+
+.input-group-btn {
+    font-size: 1em;
+
+    .btn {
+        vertical-align: top;
+    }
+}
+
+.input-group {
+    z-index: 1;
+
+    .btn {
+        padding: 9.5px 10px;
+    }
+
+    + .input-group {
+        margin-top: 1em;
+    }
+}
+
+/* Form Elements */
+
+.form-title {
+    font-size: 1.125em;
+    margin-bottom: 15px;
+}
+
+.required {
+    &::before {
+        content: "*";
+        font-size: 1.125em;
+        padding-left: 5px;
+        color: $brand_inverse;
+    }
+}
+
+label {
+    font-weight: normal;
+
+    &.radio-inline {
+        + label {
+            margin-left: 15px;
+        }
+    }
+
+    &.checkbox-inline{
+        margin: 5px 0;
+        margin-bottom: 0 !important;
+        font-size: 14px;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.more-btn{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 30px 0 15px;
+    @include clearfix;
+
+    .btn {
+        max-width: 200px;
+        display: inline-block;
+    }
+}
+
+.centered {
+    float: none; 
+    margin: 0 auto; 
+    display: table; 
+    text-align: center;
+}
+
+.form-horizontal {
+    @include clearfix;
+    margin-bottom: 1em;
+    
+    h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-family: $body_font;
+        font-weight: 600;
+    }
+}
+
+.form-group {
+    &[class*="col-"] {
+
+        .control-label {
+            margin-bottom: 10px;
+        }
+
+        @include MQ(M) {
+            margin:0;
+
+            &:first-of-type{
+                padding-right: 7.5px;
+                padding-left: 0;
+            }
+
+            &:last-of-type {
+                padding-left: 7.5px;
+                padding-right: 0;
+            }  
+        }
+    }
+}
+
+.sec_form {
+    padding: 20px 0;
+
+    @include MQ(M) {
+        padding: 60px;
+    }
+}
+
+.form_mng {
+    .form-control {
+        width: 100%;
+
+        @include MQ(M) {
+            width: 60%;
+        }
+    }
+}
+
+textarea, textarea.form-control, 
+input.form-control, input[type=text], input[type=password], 
+input[type=email], input[type=number], [type=text].form-control,select.form-control, 
+[type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+    border: 1px solid darken($color_grey_light, 7.5);
+    border-radius: 3px;
+    padding: 8px 10px;
+    line-height: normal;
+    color: $color_text;
+    font-size: 1em;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    text-indent: .01px;
+    background: white;
+    @include appearance(none);
+    box-shadow: none;
+    
+    &.form-grey {
+        background-color: $border_grey_light;
+        color: black;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: $brand_primary;
+        box-shadow: none;
+    }
+}
+
+select.form-control {
+    background: white url(../img/arrow-down.png) right center no-repeat;
+
+    &.form_grey {
+        background-color: $border_grey;
+        border: none;
+        border-radius: 0;
+        font-family: $header_font;
+
+         &:focus {
+            background-color: $border_grey;
+         }
+    }
+
+    &:focus {
+        outline: none;
+        background: white url(../img/arrow-down.png) right center no-repeat;
+    }
+}
+
+input[type="checkbox"]:checked, 
+.checkbox input[type="checkbox"]:checked, 
+.checkbox-inline input[type="checkbox"]:checked {
+    &::after {
+        background-color: $brand_accent;
+        border-color: $brand_accent;
+    }
+}
+
+input[type="radio"], 
+.radio input[type="radio"], 
+.radio-inline input[type="radio"] {
+    margin-top: 0;
+
+    &::before {
+        background: $brand_accent;
+    }
+    
+    &:checked:after {
+        border-color: $brand_primary;
+    }
+}
+
+.radio, .checkbox {
+    margin: 0;
+}
+
+.color-primary {
+    color: $brand_primary;
+}
+
+.color-inverse {
+    color: $brand_inverse;
+}
+
+.color-secondary {
+    color: $brand_accent;
+}
+
+.color-white {
+    color: $color_white;
+}
+
+.color-default {
+    color: $color_text;
+}
+
+.naira {
+  &::after {
+    content: "\20A6";
+    color: inherit;
+    font-style: normal;
+    padding-right: 2.5px;
+  }
+}
+
+.font_regular {
+    font-family: $body_font;
+}
+
+.font_bold {
+    font-family: $header_font;
+}
+
+.text_caps {
+    text-transform: uppercase;
+}

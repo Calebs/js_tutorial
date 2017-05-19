@@ -1,0 +1,97 @@
+.modal-dialog {
+    margin: 80px auto 20px;
+}
+
+.modal {
+    .modal-open & {
+        background-color: $border_grey;
+
+        &.in {
+            opacity: .95;
+        }
+    }
+
+    .modal-content {
+        background: transparent;
+        @include box-shadow(none);
+        border: none;
+    }
+
+	.modal-header {
+		background: transparent;
+		padding: 10px 15px;
+        color: $color_text;
+        @include clearfix;
+        border-bottom: none;
+        text-align: center;
+
+		.modal-title {
+			font-size: 18px;
+			line-height: 2;
+			display: block;
+            text-align: center;
+            color: inherit;
+            font-weight: 200;
+		}
+
+        .subtitle {
+            max-width: 450px;
+            margin: 5px auto 10px;
+            font-size: 1em;
+        }
+	}
+
+    .close {
+        margin-top: 0;
+        font-size: 12px;
+        height: 15px;
+        width: 15px;
+        border: none;
+        line-height: 15px;
+        background: $color_white;
+        text-align: center;
+        border-radius: 50%;
+        color: $color_text;
+        opacity: 1;
+        @include transition(opacity, .3s);
+
+        &:hover,&:focus {
+            opacity: .7;
+        }
+    }
+
+	.modal-body {
+        padding: 0;
+        background: $color_white;
+        border-radius: 0 0 4px 4px;
+
+		.content-panel{
+		    padding: 10px 15px;
+		    text-align: left;
+		}
+	}
+
+    .content_header {
+        background: $brand_black;
+        text-align: center;
+        padding: 10px 15px;
+        border-radius: 4px 4px 0 0;
+
+        .title {
+            margin: 0;
+            color: $color_white;
+            font-size: 12px;
+            display: inline-block;
+            font-family: $body_font;
+        }
+    }
+
+    .side_controls {
+        padding-top: 0;
+    }
+
+    .content_container {
+        padding: 30px 50px 0;
+        @include clearfix;
+    }
+}

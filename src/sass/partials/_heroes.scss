@@ -1,0 +1,215 @@
+
+%hero_background {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $brand_accent;
+    position: relative;
+    z-index: 1;
+
+    .container {
+        position: relative;
+        z-index: 5;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+        background-color: transparent;
+    }
+}
+
+.hero_area {
+    @extend %hero_background;
+}
+
+.home_hero {
+    background-image: url(../img/banners/banner_footer.png);
+    background-position: bottom;
+    background-size: contain;
+    padding: 10px 0 20px;
+
+    .banner_image {
+        max-width: 170px;
+        margin: 0 auto 20px;
+    }
+
+    .intro-text {
+        max-width: 400px;
+        position: relative;
+        z-index: 10;
+        margin: 0;
+        padding: 0;
+        color: $color_white;
+
+        .title_phrase {
+            margin: 10px 0;
+            max-width: 75%;
+        }
+    }
+
+    .title-text {
+        color: $brand_blue;
+    }
+
+    @include MQ(S) {
+        padding: 80px 0;
+
+        .banner_image {
+            max-width: 300px;
+            position: absolute;
+            right: 0;
+            @include center(y);
+            z-index: 8;
+        }
+    }
+
+    @include MQ(M) {
+        padding: 150px 0;
+        height: 640px;
+
+        .banner_image {
+            max-width: 100%;
+            right: 30px;
+        }
+    }
+}
+
+.intro-text {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px 0;
+
+    > * + * {
+        padding-top: 10px; 
+    }
+
+    @include MQ(M) {
+        padding: 50px;
+        
+        > * + * {
+            padding-top: 20px; 
+        }
+
+        .title_phrase {
+            font-size: 14px;
+        }
+    }
+
+    .title_phrase {
+        margin: 10px auto 15px;
+        max-width: 85%;
+    }
+}
+
+.title-text {
+    font-size: 20px;
+    font-family: $body_font;
+ 
+    @include MQ(M) {
+        font-size: 30px;
+    }
+}
+
+.title_phrase {
+    font-size: 1em;
+    font-family: $body_font;
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include MQ(M) {
+        line-height: 1.75;
+    }
+}
+
+.btn_icon_group {
+    display: inline-block;
+
+    + .btn_icon_group {
+        margin-top: 1.5em;
+    }
+
+    @include MQ(M) {
+        + .btn_icon_group {
+            margin-top: 0;
+            margin-left: 1.5em;
+        }
+    }
+
+    .btn {
+        min-width: 190px;
+    }
+
+    .section_cto & {
+        display: block;
+        color: inherit;
+
+        + .btn_icon_group {
+            margin-top: 1em;
+            margin-left: 0;
+        }
+    }
+
+    .group_icon {
+        font-size: 20px;
+        padding-right: 10px;
+    }
+}
+
+.cto_banner {
+    color: $color_white;
+    background-color: $brand_accent;
+    border-bottom: 4px solid $brand_primary;
+
+    .container {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+.bean_primary {
+    background-size: contain;
+    background-image: url(../img/banners/beans.png);
+    background-color: $brand_primary;
+    background-repeat: repeat;
+    color: $color_white;
+    
+    .icon_buttons {
+        padding-top: 40px;
+    }
+}
+
+.bean_grey {
+    background-size: 250px;
+    background-image: url(../img/banners/bean_grey.png);
+    background-color: $border_grey_light;
+    background-repeat: repeat;
+}
+
+.practice_block {
+    background-image: url(../img/banners/weed.png);
+    background-color: $brand_accent;
+    color: $color_white;
+    background-size: 300px;
+    background-repeat: repeat;
+}
+
+.prop_item {
+    display: inline-block;
+    padding: 10px;
+
+    .sk-icon:not(.icon_const)::before {
+        width: 48px;
+        height: 48px;
+    }
+
+    @include MQ(M) {
+        .sk-icon:not(.icon_const)::before {
+            width: 80px;
+            height: 80px;
+        }   
+    }
+}

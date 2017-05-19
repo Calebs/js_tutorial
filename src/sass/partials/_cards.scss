@@ -1,0 +1,87 @@
+.tiles {
+	@include flexbox();
+	flex-direction: column;
+	flex-wrap: wrap;
+
+	@include MQ(S) {
+		flex-direction: row;
+	}
+}
+
+.tile {
+	height: 200px;
+	background-repeat: none;
+	background-size: cover;
+	background-position: center;
+
+	@include MQ(S) {
+		width: 50%;
+	}
+
+	@include MQ(M) {
+		width: auto;
+		flex: 1;
+	}
+
+	&.tile_earn {
+		background-image: url(../img/banners/earn.png);
+	}
+
+	&.tile_build {
+		background-image: url(../img/banners/build.png);
+	}
+
+	&.tile_issue {
+		background-image: url(../img/banners/issue.png);
+	}
+
+	&.tile_accept {
+		background-image: url(../img/banners/accept.png);
+	}
+
+	@include MQ(M) {
+		height: 320px;
+		
+		p {
+			min-height: 50px;
+		}
+	}
+
+	.btn {
+        text-transform: none;
+    }
+
+	.wrapper {
+		background-color: rgba($brand_black, .75);
+		color: $color_white;
+		height: 100%;
+	}
+
+	.v_align {
+		padding: 20px 15px;
+		
+		> * + * {
+			margin-top: 1.5em;
+		}
+
+		@include MQ(M) {
+			text-align: center;
+			padding: 20px 40px;
+
+			.base_line {
+				margin:  auto;
+			}
+		}
+	}
+}
+
+.tile_title {
+	font-family: $body_font;
+}
+
+.v_align {
+	position: absolute;
+	@include center(xy);
+	width: 100%;
+	padding: 20px 15px;
+}

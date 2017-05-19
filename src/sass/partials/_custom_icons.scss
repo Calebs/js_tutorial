@@ -1,0 +1,75 @@
+.sk-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        display: block;
+        text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &.sk-icon-xs::before {
+        width: 12px;
+        height: 12px;
+    }
+
+    &.sk-icon-sm::before {
+        width: 32px;
+        height: 32px;
+    }
+
+    &.sk-icon-md::before {
+        width: 64px;
+        height: 64px;
+    }
+
+    &.sk-icon-lg::before {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+.icon-audience::before {
+    background-image: url(../img/custom_icons/audiences.png);
+}
+
+.icon-competency::before {
+    background-image: url(../img/custom_icons/competency.png);
+}
+
+.icon-offline::before {
+    background-image: url(../img/custom_icons/offline.png);
+}
+
+.icon-play::before {
+    background-image: url(../img/custom_icons/play.png);
+}
+
+.icon-plus::before {
+    background-image: url(../img/custom_icons/plus.png);
+}
+
+.icon-dummy-1::before {
+    background-image: url(../img/custom_icons/dummy_1.png);
+}
+
+.icon-dummy-2::before {
+    background-image: url(../img/custom_icons/dummy_2.png);
+}
+
+.icon-contact::before {
+    background-image: url(../img/icons/contact_us.png);
+}
+
+
+.icon-hat::before {
+    background-image: url(../img/custom_icons/helmet.png);
+}
+
+.icon-desktop::before {
+    background-image: url(../img/custom_icons/desktop.png);
+}

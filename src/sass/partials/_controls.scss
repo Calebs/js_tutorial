@@ -1,0 +1,135 @@
+
+.action_btn {
+    padding: 20px 0;
+
+    .btn {
+        text-transform: none;
+    }
+}
+
+.dropdown-menu {
+    &.dropdown-right {
+        left: auto;
+        right: 0;
+    }
+
+    &.datepicker {
+        padding: 10px 15px;
+
+        .prev, .next {
+            color: $brand_primary;
+        }
+
+        .datepicker-switch {
+            color: $brand_accent;
+        }
+
+        .dow {
+            color: $color_grey_dark;
+        }
+    }
+}
+
+.feature_items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature_item {
+    padding: 10px 0;
+
+    .item_halfs & {
+        width: 50%;
+    }
+
+    .item_thirds & {
+        width: 33%;
+    }
+
+    @include MQ(M) {
+        padding: 20px 15px;
+    }
+}
+
+.feature_image {
+    margin: 0 auto 10px;
+    
+    img {
+        display: inline-block;
+        max-width: 48px;
+
+        @include MQ(S) {
+            max-width: 64px;
+        }
+    }
+}
+
+.feature_title {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
+
+    + p {
+        max-width: 70%;
+        margin: auto;
+        line-height: 1.4;
+    }
+}
+
+.img_shield {
+    display: block;
+    width: 64px;
+    height: 64px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $color_white;
+
+    @include MQ(M) {
+        width: 112px;
+        height: 112px;
+        line-height: 130px;
+        padding: 15px;
+    }
+}
+
+.image_card {
+    display: block;
+    position: relative;
+    padding-top: 10px;
+
+    .img_holder {
+        width: 200px;
+        height: 300px;
+        background-position: top;
+        background-repeat: no-repeat; 
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        display: none;
+
+        &.img_android {
+            background-image: url(../img/banners/android.png);
+        } 
+
+        &.img_iphone {
+            background-image: url(../img/banners/iPhone.png);
+        }
+    }
+
+    @include MQ(M) {
+        float: left;
+        width: 50%;
+        height: 150px;
+        
+        .img_holder { 
+            display: inline-block;
+
+            + .btn_icon_group {
+                padding-left: 50px;
+                margin-top: 100px;
+            }
+        }
+    }
+}
